@@ -41,13 +41,17 @@
 body {
   font-family: sans-serif;
   text-align: center;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 40em;
+  padding: 1em;
 }
 
 .flex {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
-  margin: 2em;
+  margin: 2em 1em;
 }
 
 .card {
@@ -74,4 +78,26 @@ body {
 .img {
   width: 14em;
   height: 10em;
+  padding-bottom: 1.5em;
+}
+
+.stat,
+.stat2 {
+  width: 8em;
+  line-height: 2em;
+  margin: 0 auto;
+}
+
+.stat:hover {
+  cursor: pointer;
+  background-color: rgb(207, 162, 147);
+}
+
+.pick-header {
+  position: relative;
+  top: -2em;
+}
+
+.hidden {
+  visibility: hidden;
 }
