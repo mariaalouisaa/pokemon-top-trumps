@@ -89,7 +89,7 @@ body {
   border-radius: 10px;
   width: 16em;
   height: 28em;
-  background: var(--normal-bkgr);
+  background: var(--fire-bkgr);
 }
 
 .name {
@@ -106,7 +106,6 @@ body {
 
 .pokeball {
   height: 10em;
-  padding-bottom: 1.5em;
 }
 
 .stat,
