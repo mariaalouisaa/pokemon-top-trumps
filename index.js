@@ -5,6 +5,7 @@ let draw = document.querySelector(".draw-header");
 let pick = document.querySelector(".pick-header");
 let image1 = document.getElementById("card-img1");
 let image2 = document.getElementById("card-img2");
+let messasge = document.querySelector(".message");
 
 let score1 = 0;
 let score2 = 0;
@@ -65,6 +66,7 @@ function showOposite(pokemon) {
       return data;
     })
     .then((data) => {
+      console.log(data);
       let score = currentAttack.match(/\d+/)[0];
       if (
         (currentAttack[0] === "s" && data.stats[5].base_stat >= score) ||
@@ -73,6 +75,7 @@ function showOposite(pokemon) {
         (currentAttack[0] === "w" && data.weight >= score) ||
         (currentAttack[0] === "h" && data.height >= score)
       ) {
+        messasge.innerHTML = `${data.name} wins!`;
         score2++;
         player2.innerHTML = `${score2}`;
       } else if (
@@ -82,6 +85,7 @@ function showOposite(pokemon) {
         (currentAttack[0] === "w" && data.weight <= score) ||
         (currentAttack[0] === "h" && data.height <= score)
       ) {
+        messasge.innerHTML = `${data.name} wins!`;
         score1++;
         player1.innerHTML = `${score1}`;
       }
@@ -97,6 +101,7 @@ function resetCards() {
   setTimeout(() => {
     Array.from(stats2).forEach((stat) => (stat.innerHTML = ""));
     image2.src = "pokeball.png";
+    messasge.innerHTML = "Pick your trump!";
     Array.from(stats).forEach((stat) => stat.classList.remove("selected"));
     stats.innerHTML = "";
     getPokemon();
