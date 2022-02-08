@@ -1,7 +1,6 @@
 function getPokemon(event) {
   event.preventDefault();
   let random = Math.floor(Math.random() * 21);
-  console.log(random);
   fetch(`https://pokeapi.co/api/v2/pokemon/`)
     .then((response) => {
       if (!response.ok) throw new Error(response.status);
@@ -28,6 +27,8 @@ function getCard(pokemon) {
       } else image.firstChild.src = data.sprites.front_default;
       let pokemonName = document.getElementById("card-name");
       pokemonName.innerHTML = data.name;
+      let type = document.getElementById("type");
+      type.innerHTML = data.types[0].type.name;
       let speed = document.getElementById("card-speed");
       speed.innerHTML = `${data.stats[5].stat.name}: ${data.stats[5].base_stat}`;
       let attack = document.getElementById("card-attack");
@@ -38,7 +39,6 @@ function getCard(pokemon) {
       weight.innerHTML = `weight: ${data.weight}`;
       let height = document.getElementById("card-height");
       height.innerHTML = `height: ${data.height}`;
-      console.log(data);
     })
     .catch((error) => console.error(error));
 }

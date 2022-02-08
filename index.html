@@ -4,21 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <p>Draw your Pokemon!</p>
-    <button type="button" id="submit">Submit</button>
+    <span>Draw your Pokemon!</span>
+    <button type="button" id="submit">Go</button>
+    <div class="flex">
+      <div class="card card1">
+        <p id="card-name" class="name"></p>
+        <p id="type" class="type"></p>
+        <div class="img" id="card-img"></div>
+        <p id="card-speed"></p>
+        <p id="card-attack"></p>
+        <p id="card-defense"></p>
+        <p id="card-weight"></p>
+        <p id="card-height"></p>
+      </div>
 
-    <div>
-      <p id="card-name"></p>
-      <div id="card-img"></div>
-      <p id="card-speed"></p>
-      <p id="card-attack"></p>
-      <p id="card-defense"></p>
-      <p id="card-weight"></p>
-      <p id="card-height"></p>
+      <div class="card card2">
+        <p id="card-name2" class="name"></p>
+        <div class="img2" id="card-img2"></div>
+        <p id="card-speed2"></p>
+        <p id="card-attack2"></p>
+        <p id="card-defense2"></p>
+        <p id="card-weight2"></p>
+        <p id="card-height2"></p>
+      </div>
     </div>
+
     <script src="index.js"></script>
   </body>
 </html>
