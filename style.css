@@ -44,7 +44,9 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
   width: 40em;
+  margin: 0 auto;
   padding: 1em;
+  overflow: hidden;
 }
 
 .scoreboard {
@@ -68,7 +70,20 @@ body {
   margin: 2em 1em;
 }
 
+.draw-header {
+  position: relative;
+  left: 6em;
+  bottom: 3em;
+}
+
+.pick-header {
+  position: relative;
+  left: 7em;
+  bottom: 5em;
+}
+
 .card {
+  margin-top: -3em;
   border: none;
   box-shadow: 2px 2px 2px rgb(161, 161, 161);
   border-radius: 10px;
@@ -89,8 +104,7 @@ body {
   padding-right: 2em;
 }
 
-.img {
-  width: 14em;
+.pokeball {
   height: 10em;
   padding-bottom: 1.5em;
 }
@@ -110,11 +124,6 @@ body {
 
 .selected {
   background-color: rgb(248, 115, 71);
-}
-
-.pick-header {
-  position: relative;
-  top: -2em;
 }
 
 .hidden {

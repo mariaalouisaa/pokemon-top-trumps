@@ -3,7 +3,9 @@ let player1 = document.getElementById("score1");
 let player2 = document.getElementById("score2");
 let draw = document.querySelector(".draw-header");
 let pick = document.querySelector(".pick-header");
-let imageDiv = document.getElementById("card-img2");
+let image1 = document.getElementById("card-img1");
+let image2 = document.getElementById("card-img2");
+
 let score1 = 0;
 let score2 = 0;
 
@@ -45,11 +47,7 @@ function showOposite(pokemon) {
       return response.json();
     })
     .then((data) => {
-      if (imageDiv.hasChildNodes() === false) {
-        let myImage = new Image(200);
-        myImage.src = data.sprites.front_default;
-        imageDiv.appendChild(myImage);
-      } else imageDive.firstChild.src = data.sprites.front_default;
+      image2.src = data.sprites.front_default;
       let pokemonName = document.getElementById("card-name2");
       pokemonName.innerHTML = data.name;
       let type = document.getElementById("type2");
@@ -98,7 +96,7 @@ function resetCards() {
 
   setTimeout(() => {
     Array.from(stats2).forEach((stat) => (stat.innerHTML = ""));
-    imageDiv.removeChild(imageDiv.childNodes[0]);
+    image2.src = "pokeball.png";
     Array.from(stats).forEach((stat) => stat.classList.remove("selected"));
     stats.innerHTML = "";
     getPokemon();
@@ -125,12 +123,7 @@ function getCard(pokemon) {
       return response.json();
     })
     .then((data) => {
-      let image = document.getElementById("card-img");
-      if (image.hasChildNodes() === false) {
-        let myImage = new Image(200);
-        myImage.src = data.sprites.front_default;
-        image.appendChild(myImage);
-      } else image.firstChild.src = data.sprites.front_default;
+      image1.src = data.sprites.front_default;
       let pokemonName = document.getElementById("card-name");
       pokemonName.innerHTML = data.name;
       let type = document.getElementById("type");
