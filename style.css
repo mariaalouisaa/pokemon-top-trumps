@@ -108,7 +108,6 @@ button:hover {
   border-radius: 10px;
   width: 16em;
   height: 28em;
-  background: var(--fire-bkgr);
 }
 
 .name {
@@ -181,4 +180,5 @@ button:hover {
   height: 100%;
   backface-visibility: hidden;
   position: absolute;
+  background: var(--fire-bkgr);
 }

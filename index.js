@@ -7,6 +7,8 @@ let pick = document.querySelector(".pick-header");
 let image1 = document.getElementById("card-img1");
 let image2 = document.getElementById("card-img2");
 let messasge = document.querySelector(".message");
+let card1 = document.querySelector(".card1");
+let card2 = document.querySelector(".card2");
 
 let score1 = 0;
 let score2 = 0;
@@ -49,6 +51,8 @@ function showOposite(pokemon) {
       return response.json();
     })
     .then((data) => {
+      let bkgrd = data.types[0].type.name;
+      card2.style.background = `var(--${bkgrd}-bkgr)`;
       image2.src = data.sprites.front_default;
       let pokemonName = document.getElementById("card-name2");
       pokemonName.innerHTML = data.name;
@@ -130,6 +134,8 @@ function getCard(pokemon) {
     })
     .then((data) => {
       messasge.innerHTML = "Pick your trump!";
+      let bkgrd = data.types[0].type.name;
+      card1.style.background = `var(--${bkgrd}-bkgr)`;
       image1.src = data.sprites.front_default;
       let pokemonName = document.getElementById("card-name");
       player1pokemon = data.name;
