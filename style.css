@@ -142,13 +142,14 @@ button:hover {
 .stat2 {
   width: 8em;
   line-height: 2em;
-  margin: 0 auto;
+  margin: 2px auto;
   border: 2px solid transparent;
+  border-radius: 20px;
 }
 
 .stat:hover {
   cursor: pointer;
-  background-color: rgb(255, 180, 155);
+  border: #e64642 2px solid;
 }
 
 .selected {
