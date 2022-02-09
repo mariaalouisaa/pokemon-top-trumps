@@ -1,3 +1,4 @@
+let player1pokemon;
 let currentAttack;
 let player1 = document.getElementById("score1");
 let player2 = document.getElementById("score2");
@@ -63,10 +64,11 @@ function showOposite(pokemon) {
       weight.innerHTML = `weight: ${data.weight}`;
       let height = document.getElementById("card-height2");
       height.innerHTML = `height: ${data.height}`;
+      document.querySelector(".cardself2").style.transform = "rotateY(180deg)";
+
       return data;
     })
     .then((data) => {
-      console.log(data);
       let score = currentAttack.match(/\d+/)[0];
       if (
         (currentAttack[0] === "s" && data.stats[5].base_stat >= score) ||
@@ -85,7 +87,7 @@ function showOposite(pokemon) {
         (currentAttack[0] === "w" && data.weight <= score) ||
         (currentAttack[0] === "h" && data.height <= score)
       ) {
-        messasge.innerHTML = `${data.name} wins!`;
+        messasge.innerHTML = `${player1pokemon} wins!`;
         score1++;
         player1.innerHTML = `${score1}`;
       }
@@ -96,16 +98,15 @@ function showOposite(pokemon) {
 
 function resetCards() {
   let stats = document.querySelectorAll(".stat");
-  let stats2 = document.querySelectorAll(".card2 p");
 
   setTimeout(() => {
-    Array.from(stats2).forEach((stat) => (stat.innerHTML = ""));
-    image2.src = "pokeball.png";
-    messasge.innerHTML = "Pick your trump!";
+    document.querySelector(".cardself2").style.transform = "rotateY(0deg)";
+    document.querySelector(".cardself").style.transform = "rotateY(0deg)";
     Array.from(stats).forEach((stat) => stat.classList.remove("selected"));
-    stats.innerHTML = "";
-    getPokemon();
   }, 4000);
+  setTimeout(() => {
+    getPokemon();
+  }, 6000);
 }
 
 function getPokemon() {
@@ -128,8 +129,10 @@ function getCard(pokemon) {
       return response.json();
     })
     .then((data) => {
+      messasge.innerHTML = "Pick your trump!";
       image1.src = data.sprites.front_default;
       let pokemonName = document.getElementById("card-name");
+      player1pokemon = data.name;
       pokemonName.innerHTML = data.name;
       let type = document.getElementById("type");
       type.innerHTML = data.types[0].type.name;
@@ -143,6 +146,7 @@ function getCard(pokemon) {
       weight.innerHTML = `weight: ${data.weight}`;
       let height = document.getElementById("card-height");
       height.innerHTML = `height: ${data.height}`;
+      document.querySelector(".cardself").style.transform = "rotateY(180deg)";
     })
     .then(pickTrump())
     .catch((error) => console.error(error));
