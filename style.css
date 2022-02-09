@@ -1,5 +1,5 @@
 :root {
-  --electric-red: #fd2f01;
+  --pika-yellow: rgb(247, 191, 48);
   --water-blue: #27b0ff;
   --fire-orange: #fb9a3e;
   --bug-green: #a6d455;
@@ -35,6 +35,12 @@
     rgba(176, 197, 179, 1) 49%,
     rgba(201, 215, 203, 1) 64%,
     rgba(255, 255, 255, 0) 100%
+  );
+  --pika-bkgr: linear-gradient(
+    180deg,
+    rgba(247, 191, 48, 1) 41%,
+    rgba(251, 219, 139, 1) 68%,
+    rgba(255, 255, 255, 0.8356807511737089) 100%
   );
 }
 
@@ -180,5 +186,5 @@ button:hover {
   height: 100%;
   backface-visibility: hidden;
   position: absolute;
-  background: var(--fire-bkgr);
+  background: var(--pika-bkgr);
 }
