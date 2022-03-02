@@ -45,7 +45,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Fredoka", sans-serif;
   text-align: center;
   font-weight: 600;
   letter-spacing: 2px;
@@ -214,4 +214,9 @@ button:hover {
   backface-visibility: hidden;
   position: absolute;
   background: var(--pika-bkgr);
+}
+
+.dark {
+  background-color: #333f45;
+  color: whitesmoke;
 }

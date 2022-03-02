@@ -9,6 +9,7 @@ let image2 = document.getElementById("card-img2");
 let messasge = document.querySelector(".message");
 let card1 = document.querySelector(".card1");
 let card2 = document.querySelector(".card2");
+let day = true;
 
 let score1 = 0;
 let score2 = 0;
@@ -134,8 +135,8 @@ function getCard(pokemon) {
     })
     .then((data) => {
       messasge.innerHTML = "Pick your trump!";
-            let bkgrd = data.types[0].type.name;
-            card1.style.background = `var(--${bkgrd}-bkgr)`;
+      let bkgrd = data.types[0].type.name;
+      card1.style.background = `var(--${bkgrd}-bkgr)`;
       image1.src = data.sprites.front_default;
       let pokemonName = document.getElementById("card-name");
       player1pokemon = data.name;
@@ -157,5 +158,15 @@ function getCard(pokemon) {
     .then(pickTrump())
     .catch((error) => console.error(error));
 }
+
+document.getElementById("dark").addEventListener("click", (e) => {
+  day ? (day = false) : (day = true);
+
+  document.querySelector("body").classList.toggle("dark");
+
+  day
+    ? (e.target.innerHTML = '<i class="fas fa-moon"></i>')
+    : (e.target.innerHTML = '<i class="fas fa-sun"></i>');
+});
 
 document.getElementById("submit").addEventListener("click", getPokemon);
