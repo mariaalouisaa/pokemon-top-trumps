@@ -81,6 +81,10 @@ header button {
   cursor: pointer;
 }
 
+header button:hover {
+  color: #333f45;
+}
+
 .scoreboard {
   display: flex;
   gap: 1em;
@@ -128,8 +132,8 @@ header button {
   cursor: pointer;
 }
 
-button:hover {
-  transform: scale(0.8);
+.go:hover {
+  transform: scale(1.2);
 }
 
 .card {
