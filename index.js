@@ -134,8 +134,8 @@ function getCard(pokemon) {
     })
     .then((data) => {
       messasge.innerHTML = "Pick your trump!";
-      let bkgrd = data.types[0].type.name;
-      card1.style.background = `var(--${bkgrd}-bkgr)`;
+            let bkgrd = data.types[0].type.name;
+            card1.style.background = `var(--${bkgrd}-bkgr)`;
       image1.src = data.sprites.front_default;
       let pokemonName = document.getElementById("card-name");
       player1pokemon = data.name;

@@ -59,6 +59,12 @@ body {
   gap: 1em;
 }
 
+.player1,
+.player2 {
+  width: 5em;
+  max-width: 5em;
+}
+
 .playerName {
   font-size: 14px;
 }
