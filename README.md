@@ -7,12 +7,12 @@ Play against the computer by selecting which pokemon power on your card is the b
 ---
 
 ## Features include: 
-- 🤖 GET requests to the API
+- 🤖 `GET` requests to the API
 - 🎨 CSS flip card animation
-- ⌚ setInterval() used for smooth gameplay!
-- ✒️ Event listeners and DOM manipulation
+- ⌚ `setInterval()` used for smooth gameplay!
+- ✒️ `add.EventListener`'s and DOM manipulation
 - 🔢 Visible scoreboard!
-- ✏️ contenteditable used to allow player to change their name
+- ✏️ `contenteditable` used to allow player to change their name
 
 ## Game screenshots:
 
