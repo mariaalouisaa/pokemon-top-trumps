@@ -49,9 +49,33 @@ body {
   text-align: center;
   font-weight: 600;
   letter-spacing: 2px;
-  width: 40em;
   margin: 0 auto;
-  padding: 1em;
+  padding: 0;
+  overflow: hidden;
+  max-width: 56em;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header {
+  justify-content: space-between;
+  background-color: #e64642;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+header button {
+  background: none;
+  border: 2px solid #333f45;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  align-self: center;
 }
 
 .scoreboard {
@@ -74,13 +98,6 @@ body {
   margin: 0;
 }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  margin: 2em 1em;
-}
-
 .draw-header {
   position: relative;
   left: 5em;
@@ -95,7 +112,7 @@ body {
   font-size: 1.5em;
 }
 
-button {
+.go {
   border-radius: 50%;
   height: 3em;
   width: 3em;
@@ -118,12 +135,12 @@ button:hover {
   border: none;
   box-shadow: 2px 2px 2px rgb(161, 161, 161);
   border-radius: 10px;
-  width: 16em;
+  width: 10em;
   height: 28em;
 }
 
 .name {
-  font-size: 2em;
+  font-size: 1.5em;
   height: 1em;
   margin: 0.5em auto;
 }
@@ -141,7 +158,7 @@ button:hover {
 
 .pokemon {
   margin: -1em;
-  height: 12em;
+  height: 8em;
 }
 
 .stat,
@@ -169,8 +186,9 @@ button:hover {
 .card-container {
   perspective: 600;
   position: relative;
-  width: 16em;
-  height: 28em;
+  width: 14em;
+  margin: 0.5em;
+  height: 24em;
 }
 .cardself,
 .cardself2 {
