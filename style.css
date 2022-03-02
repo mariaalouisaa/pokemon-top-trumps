@@ -65,17 +65,20 @@ header {
   background-color: #e64642;
 }
 
-h1 {
+h1,
+button {
   color: whitesmoke;
 }
 
 header button {
   background: none;
-  border: 2px solid #333f45;
+  border: 3px solid #333f45;
   height: 3em;
   width: 3em;
   border-radius: 50%;
   align-self: center;
+  margin: auto 10px;
+  cursor: pointer;
 }
 
 .scoreboard {
@@ -102,7 +105,7 @@ header button {
   position: relative;
   left: 5em;
   bottom: 2.5em;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .pick-header {
@@ -117,8 +120,7 @@ header button {
   height: 3em;
   width: 3em;
   background-color: #e64642;
-  border: #333f45 solid 4px;
-  color: white;
+  border: #333f45 solid 3px;
   font-weight: 600;
   font-size: 0.6em;
   padding: 0;
