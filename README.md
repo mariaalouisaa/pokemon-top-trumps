@@ -6,12 +6,13 @@ Play against the computer by selecting which pokemon power on your card is the b
 
 ---
 
-Features include: 
-- GET requests to the API
-- CSS flip card animation
-- setInterval() used for smooth gameplay!
-- Event listeners and DOM manipulation
-- Visible scoreboard!
+## Features include: 
+- 🤖 GET requests to the API
+- 🎨 CSS flip card animation
+- ⌚ setInterval() used for smooth gameplay!
+- ✒️ Event listeners and DOM manipulation
+- 🔢 Visible scoreboard!
+- ✏️ contenteditable used to allow player to change their name
 
 ## Game screenshots:
 
@@ -20,9 +21,15 @@ Features include:
 ---
 
 Features I still want to add:
-- Allow user to change their name (add an event to player1 tag)
-- Save the players high score to localStorage
+- [ ] A header with a title, settings link + more
+- [ ] Dark/Light mode toggle
+- [ ] Save the players high score to localStorage
+- [ ] Make the App responsive so it can be enjoyed on mobile devices too!
 
-⭐Hosted on [GitHub Pages](https://mariaalouisaa.github.io/pokemon-top-trumps/)⭐ 
+*See repo issues for more details*
+
+---
 
 Site designed, coded and maintained entirely by myself.
+
+⭐Hosted on [GitHub Pages](https://mariaalouisaa.github.io/pokemon-top-trumps/)⭐ 
