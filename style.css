@@ -215,3 +215,8 @@ button:hover {
   position: absolute;
   background: var(--pika-bkgr);
 }
+
+.dark {
+  background-color: #333f45;
+  color: whitesmoke;
+}
