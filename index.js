@@ -9,6 +9,7 @@ let image2 = document.getElementById("card-img2");
 let messasge = document.querySelector(".message");
 let card1 = document.querySelector(".card1");
 let card2 = document.querySelector(".card2");
+const popup = document.querySelector(".instructions")
 let day = true;
 
 let score1 = 0;
@@ -168,5 +169,13 @@ document.getElementById("dark").addEventListener("click", (e) => {
     ? (e.target.innerHTML = '<i class="fas fa-moon"></i>')
     : (e.target.innerHTML = '<i class="fas fa-sun"></i>');
 });
+
+document.querySelector('#close').addEventListener('click', (e) => {
+  popup.classList.add('hide');
+})
+
+document.querySelector('#help').addEventListener('click', (e) => {
+  popup.classList.remove('hide');
+})
 
 document.getElementById("submit").addEventListener("click", getPokemon);

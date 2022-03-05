@@ -59,7 +59,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-
+/* Header */
 header {
   justify-content: space-between;
   background-color: #e64642;
@@ -84,7 +84,7 @@ header button {
 header button:hover {
   color: #333f45;
 }
-
+/* Scoreboard */
 .scoreboard {
   display: flex;
   gap: 1em;
@@ -104,7 +104,7 @@ header button:hover {
   font-size: 2.2em;
   margin: 0;
 }
-
+/* Alerts text */
 .draw-header {
   position: relative;
   left: 5em;
@@ -118,7 +118,7 @@ header button:hover {
   bottom: 4.7em;
   font-size: 1.5em;
 }
-
+/* pokemon button */
 .go {
   border-radius: 50%;
   height: 3em;
@@ -135,7 +135,7 @@ header button:hover {
 .go:hover {
   transform: scale(1.2);
 }
-
+/* Cards */
 .card {
   margin-top: -6em;
   border: none;
@@ -220,6 +220,48 @@ header button:hover {
   background: var(--pika-bkgr);
 }
 
+/* pop-up */
+.instructions {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: whitesmoke;
+  border: #333f45 solid 3px;
+  padding: 0 1.5em;
+  border-radius: 20px;
+}
+
+.close {
+  background-color: transparent;
+  border: none;
+  color: black;
+  float: right;
+  font-size: 1.4em;
+  margin: 0.5em auto;
+  cursor: pointer;
+}
+
+ol {
+  text-align: left;
+}
+
+.note {
+  font-size: 13px;
+  text-align: left;
+}
+
+.fun {
+  color:  #e64642;
+  font-size: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+/* dark mode */
 .dark {
   background-color: #333f45;
   color: whitesmoke;
