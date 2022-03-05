@@ -257,6 +257,10 @@ ol {
   font-size: 1em;
 }
 
+.hide {
+  display: none;
+}
+
 /* dark mode */
 .dark {
   background-color: #333f45;
