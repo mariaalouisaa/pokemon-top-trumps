@@ -220,6 +220,10 @@ header button:hover {
   background: var(--pika-bkgr);
 }
 
+.main-container {
+justify-content: center;
+}
+
 /* pop-ups */
 .instructions, .winner {
   position: absolute;
@@ -263,15 +267,15 @@ ol {
 
 /* winner */
 .winner {
-  margin-top: 4em;
-  width: 20em;
-  height: 25.5em;
+  margin-top: 5em;
+  width: 26em;
+  height: 24em;
 }
 
 .replay {
-  background: #e64642;
-  border: #333f45 solid 3px;
-  border-radius: 25px;
+background: #e64642;
+border: #333f45 solid 3px;
+border-radius: 25px;
 font-size: 24px;
 padding: 0.5em 1em;
 }
