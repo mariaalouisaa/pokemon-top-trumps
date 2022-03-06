@@ -13,16 +13,16 @@ Play against the computer by selecting which pokemon power on your card is the b
 - ✒️ `add.EventListener`'s and DOM manipulation
 - 🔢 Visible scoreboard!
 - ✏️ `contenteditable` used to allow player to change their name
+- 💣 Pop-up instructions
+- 🌙 Dark/light mode `toggle`
 
 ## Game screenshots:
 
-<img width="30%" alt="poke" src="https://user-images.githubusercontent.com/82417131/153784528-a188f53e-5465-4ffd-bb96-40c1c61662c3.png"> <img width="30%" alt="poke2" src="https://user-images.githubusercontent.com/82417131/153784534-beda8146-769d-4e0f-aa70-1db4695fcd9a.png"> <img width="30%" alt="poke1" src="https://user-images.githubusercontent.com/82417131/153784538-daf961ef-20f8-495b-856f-f34b76237c1f.png">
+<img width="300" alt="1" src="https://user-images.githubusercontent.com/82417131/156945292-53af44f2-4f01-41ca-9663-09da93e59f97.png">    <img width="300" alt="3" src="https://user-images.githubusercontent.com/82417131/156945308-24e981ca-0399-4fd2-b995-54192d420da5.png">     <img width="300" alt="4" src="https://user-images.githubusercontent.com/82417131/156945309-031d85d7-308f-4214-90a0-1bc443b3c614.png">    <img width="300" alt="5" src="https://user-images.githubusercontent.com/82417131/156945311-965365dc-c3b9-4dbc-803c-9f39602a193a.png">
 
 ---
 
 Features I still want to add:
-- [ ] A header with a title, settings link + more
-- [ ] Dark/Light mode toggle
 - [ ] Save the players high score to localStorage
 - [ ] Make the App responsive so it can be enjoyed on mobile devices too!
 
