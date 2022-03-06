@@ -13,7 +13,7 @@ const popup = document.querySelector(".instructions")
 let day = true;
 
 let score1 = 9;
-let score2 = 0;
+let score2 = 9;
 
 function pickTrump() {
   draw.classList.add("hidden");
@@ -104,14 +104,20 @@ function showOposite(pokemon) {
 }
 
 function displayWinner() {
-  let winner = score1;
-  if(score2 > score1) {
-winner = score2;
-document.querySelector('#gif').src = "sad-poke.gif"
+  if(score1 > score2) {
+    document.querySelector('#who-wins').innerHTML = 
+    `You win!
+  
+    Play again to Catch 'Em All.
+    `
+  } else {
+    document.querySelector('#gif').src = "sad-poke.gif"
+    document.querySelector('#who-wins').innerHTML = 
+`Computer wins :(
+
+Keep practicing and you'll be a Pokemon Master in no time!
+  `
   }
-  let winnerName = " "
-  document.querySelector('#who-wins').innerHTML = 
-  `${winnerName} WINS`
   document.querySelector('.winner').classList.remove('hide');
 }
 
