@@ -105,11 +105,19 @@ function showOposite(pokemon) {
 
 function displayWinner() {
   let winner = score1;
-  if(score2 > score1) winner = score2;
+  if(score2 > score1) {
+winner = score2;
+document.querySelector('#gif').src = "sad-poke.gif"
+  }
+  let winnerName = " "
   document.querySelector('#who-wins').innerHTML = 
-  `${winner} WINS`
+  `${winnerName} WINS`
   document.querySelector('.winner').classList.remove('hide');
 }
+
+document.querySelector('#replay').addEventListener('click', () => {
+   window.location.reload();
+})
 
 function resetCards() {
   let stats = document.querySelectorAll(".stat");

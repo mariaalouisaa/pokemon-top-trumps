@@ -269,10 +269,15 @@ ol {
 }
 
 .replay {
-
   background: #e64642;
   border: #333f45 solid 3px;
-  border-radius: 20px;
+  border-radius: 25px;
+font-size: 24px;
+padding: 0.5em 1em;
+}
+
+.gif {
+  height: 16em;
 }
 
 /* dark mode */
