@@ -12,7 +12,7 @@ let card2 = document.querySelector(".card2");
 const popup = document.querySelector(".instructions")
 let day = true;
 
-let score1 = 0;
+let score1 = 9;
 let score2 = 0;
 
 function pickTrump() {
@@ -97,9 +97,18 @@ function showOposite(pokemon) {
         score1++;
         player1.innerHTML = `${score1}`;
       }
+      if (score1 === 10 || score2 === 10) displayWinner();
     })
     .then(resetCards())
     .catch((error) => console.error(error));
+}
+
+function displayWinner() {
+  let winner = score1;
+  if(score2 > score1) winner = score2;
+  document.querySelector('#who-wins').innerHTML = 
+  `${winner} WINS`
+  document.querySelector('.winner').classList.remove('hide');
 }
 
 function resetCards() {
