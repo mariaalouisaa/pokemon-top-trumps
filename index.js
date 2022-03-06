@@ -12,8 +12,8 @@ let card2 = document.querySelector(".card2");
 const popup = document.querySelector(".instructions")
 let day = true;
 
-let score1 = 0;
-let score2 = 0;
+let score1 = 9;
+let score2 = 9;
 
 function pickTrump() {
   draw.classList.add("hidden");
@@ -97,10 +97,33 @@ function showOposite(pokemon) {
         score1++;
         player1.innerHTML = `${score1}`;
       }
+      if (score1 === 10 || score2 === 10) displayWinner();
     })
     .then(resetCards())
     .catch((error) => console.error(error));
 }
+
+function displayWinner() {
+  if(score1 > score2) {
+    document.querySelector('#who-wins').innerHTML = 
+    `You win!
+  
+    Play again to Catch 'Em All.
+    `
+  } else {
+    document.querySelector('#gif').src = "sad-poke.gif"
+    document.querySelector('#who-wins').innerHTML = 
+`Computer wins :(
+
+Keep practicing and you'll be a Pokemon Master in no time!
+  `
+  }
+  document.querySelector('.winner').classList.remove('hide');
+}
+
+document.querySelector('#replay').addEventListener('click', () => {
+   window.location.reload();
+})
 
 function resetCards() {
   let stats = document.querySelectorAll(".stat");
