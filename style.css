@@ -268,7 +268,7 @@ ol {
 /* winner */
 .winner {
   margin-top: 5em;
-  width: 26em;
+  width: 28em;
   height: 24em;
 }
 
@@ -278,6 +278,7 @@ border: #333f45 solid 3px;
 border-radius: 25px;
 font-size: 24px;
 padding: 0.5em 1em;
+cursor: pointer;
 }
 
 .gif {
@@ -288,4 +289,5 @@ padding: 0.5em 1em;
 .dark {
   background-color: #333f45;
   color: whitesmoke;
+  border-color: whitesmoke;
 }

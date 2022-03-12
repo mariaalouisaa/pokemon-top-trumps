@@ -14,7 +14,6 @@ let day = true;
 
 let score1 = 0;
 let score2 = 0;
-
 function pickTrump() {
   draw.classList.add("hidden");
   pick.classList.remove("hidden");
@@ -186,7 +185,7 @@ function getCard(pokemon) {
 document.getElementById("dark").addEventListener("click", (e) => {
   day ? (day = false) : (day = true);
 
-  document.querySelector("body").classList.toggle("dark");
+  document.querySelector(".light").classList.toggle("dark");
 
   day
     ? (e.target.innerHTML = '<i class="fas fa-moon"></i>')
