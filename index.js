@@ -2,12 +2,8 @@ let player1pokemon;
 let currentAttack;
 let score1 = 0;
 let score2 = 0;
-let player1 = document.getElementById("score1");
-let player2 = document.getElementById("score2");
-let draw = document.querySelector(".draw-header");
-let pick = document.querySelector(".pick-header");
-let messasge = document.querySelector(".message");
-const popup = document.querySelector(".instructions")
+const messasge = document.querySelector(".message");
+const instructions = document.querySelector(".instructions")
 let day = true;
 
 function getPokemon(player) {
@@ -30,8 +26,8 @@ function getPokemon(player) {
 }
 
 function pickTrump() {
-  draw.classList.add("hidden");
-  pick.classList.remove("hidden");
+  document.querySelector(".draw-header").classList.add("hidden");
+  document.querySelector(".pick-header").classList.remove("hidden");
   setTimeout(() => {
     let stats = document.querySelectorAll(".stat");
     stats.forEach((stat) => stat.addEventListener("click", playTrump));
@@ -62,13 +58,14 @@ function showOposite(pokemon, player) {
 
     let pokemonName = document.getElementById(`card-name${player}`);
     pokemonName.innerHTML = data.name;
+    if(player === 1) {player1pokemon = data.name}
     let type = document.getElementById(`type${player}`);
     type.innerHTML = data.types[0].type.name;
 
     let speed = document.getElementById(`card-speed${player}`);
     speed.innerHTML = `${data.stats[5].stat.name}: ${data.stats[5].base_stat}`;
       
-     let attack = document.getElementById(`card-attack${player}`);
+    let attack = document.getElementById(`card-attack${player}`);
     attack.innerHTML = `${data.stats[1].stat.name}: ${data.stats[1].base_stat}`;
     
     let defense = document.getElementById(`card-defense${player}`);
@@ -96,7 +93,7 @@ function showOposite(pokemon, player) {
       ) {
         messasge.innerHTML = `${data.name} wins!`;
         score2++;
-        player2.innerHTML = `${score2}`;
+        document.getElementById("score2").innerHTML = `${score2}`;
       } else if (
         (currentAttack[0] === "s" && data.stats[5].base_stat <= score) ||
         (currentAttack[0] === "a" && data.stats[1].base_stat <= score) ||
@@ -106,7 +103,7 @@ function showOposite(pokemon, player) {
       ) {
         messasge.innerHTML = `${player1pokemon} wins!`;
         score1++;
-        player1.innerHTML = `${score1}`;
+        document.getElementById("score1").innerHTML = `${score1}`;
       }
       if (score1 === 10 || score2 === 10) displayWinner();
       resetCards();
@@ -129,7 +126,9 @@ function resetCards() {
   setTimeout(() => {
     getPokemon(1);
   }, 6000);
+  
 }
+
 
 function displayWinner() {
   if(score1 > score2) {
@@ -150,9 +149,7 @@ Keep practicing and you'll be a Pokemon Master in no time!
 }  
 
 
-document.querySelector('#replay').addEventListener('click', () => {
-   window.location.reload();
-})   
+document.querySelector('#replay').addEventListener('click', () => { window.location.reload();  })   
 
 
 document.getElementById("dark").addEventListener("click", (e) => {
@@ -169,8 +166,8 @@ document.getElementById("dark").addEventListener("click", (e) => {
 });
 
 
-Array.from(document.querySelectorAll('.popup')).forEach(item => item.addEventListener('click', (e) => {
-  popup.classList.toggle('hide');
+Array.from(document.querySelectorAll('.popup')).forEach(item => item.addEventListener('click', () => {
+  instructions.classList.toggle('hide');
 }));
 
 document.getElementById("submit").addEventListener("click", () => { getPokemon(1) });
