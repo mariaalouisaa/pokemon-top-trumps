@@ -268,7 +268,7 @@ ol {
 /* winner */
 .winner {
   margin-top: 5em;
-  width: 26em;
+  width: 28em;
   height: 24em;
 }
 
@@ -288,4 +288,5 @@ padding: 0.5em 1em;
 .dark {
   background-color: #333f45;
   color: whitesmoke;
+  border-color: whitesmoke;
 }
