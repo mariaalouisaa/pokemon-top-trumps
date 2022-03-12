@@ -82,8 +82,7 @@ function showOposite(pokemon, player) {
     
     document.querySelector(`.cardself${player}`).style.transform = "rotateY(180deg)";
 
-
-      return data;
+     return data;
     })
     .then((data) => {
       if (player === 2) {
@@ -159,19 +158,19 @@ document.querySelector('#replay').addEventListener('click', () => {
 document.getElementById("dark").addEventListener("click", (e) => {
   day ? (day = false) : (day = true);
 
-  document.querySelector(".light").classList.toggle("dark");
+  document.querySelector("body").classList.toggle("dark");
+  document.querySelector(".instructions").classList.toggle("dark");
+  document.querySelector(".close").classList.toggle("dark");
+
 
   day
     ? (e.target.innerHTML = '<i class="fas fa-moon"></i>')
     : (e.target.innerHTML = '<i class="fas fa-sun"></i>');
 });
 
-document.querySelector('#close').addEventListener('click', (e) => {
-  popup.classList.add('hide');
-})
 
-document.querySelector('#help').addEventListener('click', (e) => {
-  popup.classList.remove('hide');
-})
+Array.from(document.querySelectorAll('.popup')).forEach(item => item.addEventListener('click', (e) => {
+  popup.classList.toggle('hide');
+}));
 
 document.getElementById("submit").addEventListener("click", () => { getPokemon(1) });
