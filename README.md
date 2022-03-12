@@ -25,6 +25,8 @@ Play against the computer by selecting which pokemon power on your card is the b
 Features I still want to add:
 - [ ] Save the players high score to localStorage
 - [ ] Make the App responsive so it can be enjoyed on mobile devices too!
+- [ ] Add unit tests
+- [ ] Do a full accessibility check
 
 *See repo issues for more details*
 
