@@ -12,8 +12,8 @@ let card2 = document.querySelector(".card2");
 const popup = document.querySelector(".instructions")
 let day = true;
 
-let score1 = 9;
-let score2 = 9;
+let score1 = 0;
+let score2 = 0;
 function pickTrump() {
   draw.classList.add("hidden");
   pick.classList.remove("hidden");

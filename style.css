@@ -278,6 +278,7 @@ border: #333f45 solid 3px;
 border-radius: 25px;
 font-size: 24px;
 padding: 0.5em 1em;
+cursor: pointer;
 }
 
 .gif {
