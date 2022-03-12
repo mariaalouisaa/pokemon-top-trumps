@@ -196,7 +196,7 @@ header button:hover {
   margin: 0.5em;
   height: 24em;
 }
-.cardself,
+.cardself1,
 .cardself2 {
   height: 100%;
   transform-style: preserve-3d;

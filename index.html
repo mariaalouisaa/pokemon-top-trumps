@@ -18,9 +18,9 @@
     <title>Pokemon Top Trumps</title>
     <link rel="icon" type="image/x-icon" href="favicon.png" />
   </head>
-  <body class="light">
+  <body>
     <header class="flex">
-      <button id="help"><i class="fas fa-question"></i></button>
+      <button class="popup"><i class="fas fa-question"></i></button>
       <h1>Pokemon Top Trumps</h1>
       <button id="dark"><i class="fas fa-moon"></i></button>
     </header>
@@ -43,16 +43,16 @@
     </div>
     <div class="flex main-container">
       <div class="card-container">
-        <div class="cardself">
+        <div class="cardself1">
           <div class="card card1 front">
-            <p id="card-name" class="name"></p>
-            <p id="type" class="type"></p>
+            <p id="card-name1" class="name"></p>
+            <p id="type1" class="type"></p>
             <img src="/" alt="pokemon" id="card-img1" class="pokemon" />
-            <p id="card-speed" class="stat"></p>
-            <p id="card-attack" class="stat"></p>
-            <p id="card-defense" class="stat"></p>
-            <p id="card-weight" class="stat"></p>
-            <p id="card-height" class="stat"></p>
+            <p id="card-speed1" class="stat"></p>
+            <p id="card-attack1" class="stat"></p>
+            <p id="card-defense1" class="stat"></p>
+            <p id="card-weight1" class="stat"></p>
+            <p id="card-height1" class="stat"></p>
           </div>
           <div class="card back">
             <img src="pokeball.png" alt="pokemon ball" class="pokeball" />
@@ -77,8 +77,8 @@
         </div>
       </div>
     </div>
-      <div role="alert" id="instructions" class="instructions hide light">
-        <button class="close light" id="close"><i class="fas fa-times"></i></button>
+      <div role="alert" id="instructions" class="instructions hide">
+        <button class="close popup"><i class="fas fa-times"></i></button>
         <h2>How to play</h2>
     
 <ol>
