@@ -1,5 +1,7 @@
 let player1pokemon;
 let currentAttack;
+let score1 = 0;
+let score2 = 0;
 let player1 = document.getElementById("score1");
 let player2 = document.getElementById("score2");
 let draw = document.querySelector(".draw-header");
@@ -12,8 +14,6 @@ let card2 = document.querySelector(".card2");
 const popup = document.querySelector(".instructions")
 let day = true;
 
-let score1 = 0;
-let score2 = 0;
 function pickTrump() {
   draw.classList.add("hidden");
   pick.classList.remove("hidden");
@@ -27,22 +27,7 @@ function playTrump(e) {
   e.preventDefault();
   this.classList.add("selected");
   currentAttack = this.innerHTML;
-  getComputerPokemon();
-}
-
-function getComputerPokemon() {
-  let random = Math.floor(Math.random() * 21);
-  fetch(`https://pokeapi.co/api/v2/pokemon/`)
-    .then((response) => {
-      if (!response.ok) throw new Error(response.status);
-      return response.json();
-    })
-    .then((data) => {
-      setTimeout(() => {
-        showOposite(data.results[random].name);
-      }, 1000);
-    })
-    .catch((error) => console.error(error));
+  getPokemon(2);
 }
 
 function showOposite(pokemon) {
@@ -133,11 +118,11 @@ function resetCards() {
     Array.from(stats).forEach((stat) => stat.classList.remove("selected"));
   }, 4000);
   setTimeout(() => {
-    getPokemon();
+    getPokemon(1);
   }, 6000);
 }
 
-function getPokemon() {
+function getPokemon(player) {
   let random = Math.floor(Math.random() * 21);
   fetch(`https://pokeapi.co/api/v2/pokemon/`)
     .then((response) => {
@@ -145,7 +130,13 @@ function getPokemon() {
       return response.json();
     })
     .then((data) => {
+      if(player === 1) {
       getCard(data.results[random].name);
+      } else {
+          setTimeout(() => {
+        showOposite(data.results[random].name);
+      }, 1000);
+      }
     })
     .catch((error) => console.error(error));
 }
@@ -200,4 +191,4 @@ document.querySelector('#help').addEventListener('click', (e) => {
   popup.classList.remove('hide');
 })
 
-document.getElementById("submit").addEventListener("click", getPokemon);
+document.getElementById("submit").addEventListener("click", () => { getPokemon(1) });
