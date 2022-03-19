@@ -20,7 +20,7 @@
   </head>
   <body>
     <header class="flex">
-      <button class="popup"><i class="fas fa-question"></i></button>
+      <button id="help" class="popup"><i class="fas fa-question"></i></button>
       <h1>Pokemon Top Trumps</h1>
       <button id="dark"><i class="fas fa-moon"></i></button>
     </header>
@@ -77,28 +77,34 @@
         </div>
       </div>
     </div>
-      <div role="alert" id="instructions" class="instructions hide">
-        <button class="close popup"><i class="fas fa-times"></i></button>
-        <h2>How to play</h2>
-    
-<ol>
-  <li>Click 'Go' to draw your first card.</li>
-  <li>Click on the attack you want to play.</li>
-  <li>Whichever pokemon has the higher rating for the attack you picked wins!</li>
-<li>First player to 10 wins!</li>
-</ol>
+    <div role="alert" id="instructions" class="instructions hide">
+      <button class="close popup"><i class="fas fa-times"></i></button>
+      <h2>How to play</h2>
 
-<p class="note">BEWARE - if you draw with the computer, the computer takes the point.</p>
-<p class="note">Click on 'Player 1' to change your player name.</p>
-<p class="fun">Have fun! :) </p>
+      <ol>
+        <li>Click 'Go' to draw your first card.</li>
+        <li>Click on the attack you want to play.</li>
+        <li>
+          Whichever pokemon has the higher rating for the attack you picked
+          wins!
+        </li>
+        <li>First player to 10 wins!</li>
+      </ol>
 
+      <p class="note">
+        BEWARE - if you draw with the computer, the computer takes the point.
+      </p>
+      <p class="note">Click on 'Player 1' to change your player name.</p>
+      <p class="fun">Have fun! :)</p>
     </div>
-<div class="winner hide light">
-  <p id="who-wins">GOTTA CATCH 'EM ALL!!</p>
-  <img id="gif" class="gif" src="happy-poke.gif" />
-  <br />
-  <button id="replay" class="replay">REPLAY</button>
-</div>
+    <div class="winner hide light">
+      <p id="who-wins">GOTTA CATCH 'EM ALL!!</p>
+      <img id="gif" class="gif" src="happy-poke.gif" />
+      <br />
+      <button id="replay" class="replay">REPLAY</button>
+    </div>
+    <script src="test-helpers.js"></script>
     <script src="index.js"></script>
+    <script src="index-test.js"></script>
   </body>
 </html>
