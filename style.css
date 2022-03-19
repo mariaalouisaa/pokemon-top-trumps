@@ -221,11 +221,12 @@ header button:hover {
 }
 
 .main-container {
-justify-content: center;
+  justify-content: center;
 }
 
 /* pop-ups */
-.instructions, .winner {
+.instructions,
+.winner {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -237,6 +238,9 @@ justify-content: center;
   border-radius: 20px;
 }
 
+.instructions {
+  z-index: 20;
+}
 .close {
   background-color: transparent;
   border: none;
@@ -257,7 +261,7 @@ ol {
 }
 
 .fun {
-  color:  #e64642;
+  color: #e64642;
   font-size: 1em;
 }
 
@@ -273,12 +277,12 @@ ol {
 }
 
 .replay {
-background: #e64642;
-border: #333f45 solid 3px;
-border-radius: 25px;
-font-size: 24px;
-padding: 0.5em 1em;
-cursor: pointer;
+  background: #e64642;
+  border: #333f45 solid 3px;
+  border-radius: 25px;
+  font-size: 24px;
+  padding: 0.5em 1em;
+  cursor: pointer;
 }
 
 .gif {

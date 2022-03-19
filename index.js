@@ -1,7 +1,7 @@
 let player1pokemon;
 let currentAttack;
-let score1 = 0;
-let score2 = 0;
+let score1 = 9;
+let score2 = 9;
 const messasge = document.querySelector(".message");
 const instructions = document.querySelector(".instructions");
 let day = true;
@@ -165,11 +165,9 @@ document.getElementById("dark").addEventListener("click", (e) => {
     : (e.target.innerHTML = '<i class="fas fa-sun"></i>');
 });
 
-Array.from(document.querySelectorAll(".popup")).forEach((item) =>
-  item.addEventListener("click", () => {
-    instructions.classList.toggle("hide");
-  })
-);
+document.querySelector("#help").addEventListener("click", () => {
+  instructions.classList.toggle("hide");
+});
 
 document.getElementById("submit").addEventListener("click", () => {
   getPokemon(1);

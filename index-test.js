@@ -20,6 +20,22 @@ test("on page load only card backs should be visible", () => {
 
 // ---------------------------------
 
+// tests instructions pop up
+
+test("clicking ? button should display how to play popup", () => {
+  //   const actual = ""
+  //   const expected ="2"
+  //   equal(actual, expected);
+});
+
+test("clicking x button should hide how to play popup", () => {
+  //   const actual = ""
+  //   const expected ="2"
+  //   equal(actual, expected);
+});
+
+// ---------------------------------
+
 // tests to check func making api call
 
 test("clicking go button turns player1 card", () => {
