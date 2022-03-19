@@ -1,7 +1,7 @@
 let player1pokemon;
 let currentAttack;
-let score1 = 9;
-let score2 = 9;
+let score1 = 0;
+let score2 = 0;
 const messasge = document.querySelector(".message");
 const instructions = document.querySelector(".instructions");
 let day = true;

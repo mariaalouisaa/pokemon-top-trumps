@@ -12,6 +12,13 @@ test("computer score should begin at 0", () => {
   equal(actual, expected);
 });
 
+test("player 1 and computer score stored should both begin at 0", () => {
+  const actual = [0, 0];
+  const expected = [score1, score2];
+  equal(actual[0], expected[0]);
+  equal(actual[1], expected[1]);
+});
+
 test("on page load only card backs should be visible", () => {
   //   const actual = ""
   //   const expected ="2"
@@ -23,15 +30,23 @@ test("on page load only card backs should be visible", () => {
 // tests instructions pop up
 
 test("clicking ? button should display how to play popup", () => {
-  //   const actual = ""
-  //   const expected ="2"
-  //   equal(actual, expected);
+  document.querySelector("#help").click();
+  const actual = document
+    .querySelector(".instructions")
+    .classList.contains("hide");
+  const expected = false;
+  equal(actual, expected);
+  document.querySelector("#help").click();
 });
 
 test("clicking x button should hide how to play popup", () => {
-  //   const actual = ""
-  //   const expected ="2"
-  //   equal(actual, expected);
+  document.querySelector("#help").click();
+  document.querySelector("#help").click();
+  const actual = document
+    .querySelector(".instructions")
+    .classList.contains("hide");
+  const expected = true;
+  equal(actual, expected);
 });
 
 // ---------------------------------
@@ -113,9 +128,108 @@ test("playTrump() lastly call drawCard() as player 2", () => {
 
 // --------------------------------------------
 // NEED TO WRITE TESTS FOR EVERYTHING BELOW (and inc) drawCard()
+// DRAWCARD() upto line 90 - if(player === 2)
 // ---------------------------------------------
+
 // testing drawCard()
-test("the .pick-header text should equal the winning pokemon", () => {
+
+test("drawCard() should fetch a new pokeAPI response", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player1 .pick-header text should equal - Pick your trump!", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player2 .pick-header text should equal - Pokemon name wins!", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player2 .pick-header text should not include undefined", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player1, their card should background colour should be that of pokemon type", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player2, their card should background colour should be that of pokemon type", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player1, their card show image of pokemon", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player2, their card show image of pokemon", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player1, their card show have name of pokemon in title", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player2, their card show have name of pokemon in title", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player1, their card show have tyoe of pokemon in title", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player2, their card show have tyoe of pokemon in title", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("pokemon title and type should be text", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("pokemon stats should be numbers", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player 1, drawCard() shouls make card1 front visible ", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player 2, drawCard() shouls make card2 front visible ", () => {
+  //   const actual = "";
+  //   const expected = "2";
+  //   equal(actual, expected);
+});
+
+test("if player 2, drawCard() shouls make card2 front visible ", () => {
   //   const actual = "";
   //   const expected = "2";
   //   equal(actual, expected);
