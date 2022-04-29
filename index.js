@@ -6,6 +6,7 @@ const messasge = document.querySelector(".message");
 const instructions = document.querySelector(".instructions");
 const stats = document.querySelectorAll(".stat");
 
+const dark = document.querySelector("#dark");
 let day = true;
 
 function getPokemon(player) {
@@ -154,26 +155,32 @@ Keep practicing and you'll be a Pokemon Master in no time!
   document.querySelector(".winner").classList.remove("hide");
 }
 
+// Event on replay button (winner pop-up)
 document.querySelector("#replay").addEventListener("click", () => {
   window.location.reload();
 });
 
-document.getElementById("dark").addEventListener("click", (e) => {
+// Light/dark mode
+dark.addEventListener("click", () => {
   day ? (day = false) : (day = true);
 
   document.querySelector("body").classList.toggle("dark");
   document.querySelector(".instructions").classList.toggle("dark");
   document.querySelector(".close").classList.toggle("dark");
 
-  day
-    ? (e.target.innerHTML = '<i class="fas fa-moon"></i>')
-    : (e.target.innerHTML = '<i class="fas fa-sun"></i>');
+  if (day) {
+    dark.innerHTML = '<i class="fas fa-moon"></i>';
+  } else {
+    dark.innerHTML = '<i class="fas fa-sun"></i>';
+  }
 });
 
+// Event for instructions pop-up
 document.querySelector("#help").addEventListener("click", () => {
   instructions.classList.toggle("hide");
 });
 
+// Event on pokeball to start the game
 document.getElementById("submit").addEventListener("click", () => {
   getPokemon(1);
 });
