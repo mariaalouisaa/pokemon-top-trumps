@@ -146,7 +146,7 @@ function displayWinner() {
     Play again to Catch 'Em All.
     `;
   } else {
-    document.querySelector("#gif").src = "sad-poke.gif";
+    document.querySelector("#gif").src = "images/sad-poke.gif";
     document.querySelector("#who-wins").innerHTML = `Computer wins :(  
 
 Keep practicing and you'll be a Pokemon Master in no time!  
