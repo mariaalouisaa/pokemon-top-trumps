@@ -189,7 +189,7 @@ header button:hover {
   visibility: hidden;
 }
 
-/**/
+/*To make stats unclickable*/
 .disable {
   pointer-events: none;
 }

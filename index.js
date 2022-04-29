@@ -31,7 +31,10 @@ function pickTrump() {
   document.querySelector(".draw-header").classList.add("hidden");
   document.querySelector(".pick-header").classList.remove("hidden");
   setTimeout(() => {
-    stats.forEach((stat) => stat.addEventListener("click", playTrump));
+    stats.forEach((stat) => {
+      stat.classList.remove("disable");
+      stat.addEventListener("click", playTrump);
+    });
   }, 100);
 }
 
