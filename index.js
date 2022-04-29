@@ -4,6 +4,9 @@ let score1 = 0;
 let score2 = 0;
 const messasge = document.querySelector(".message");
 const instructions = document.querySelector(".instructions");
+const stats = document.querySelectorAll(".stat");
+
+const dark = document.querySelector("#dark");
 let day = true;
 
 function getPokemon(player) {
@@ -29,14 +32,17 @@ function pickTrump() {
   document.querySelector(".draw-header").classList.add("hidden");
   document.querySelector(".pick-header").classList.remove("hidden");
   setTimeout(() => {
-    let stats = document.querySelectorAll(".stat");
-    stats.forEach((stat) => stat.addEventListener("click", playTrump));
+    stats.forEach((stat) => {
+      stat.classList.remove("disable");
+      stat.addEventListener("click", playTrump);
+    });
   }, 100);
 }
 
 function playTrump(e) {
   e.preventDefault();
   this.classList.add("selected");
+  stats.forEach((stat) => stat.classList.add("disable"));
   currentAttack = this.innerHTML;
   getPokemon(2);
 }
@@ -149,26 +155,32 @@ Keep practicing and you'll be a Pokemon Master in no time!
   document.querySelector(".winner").classList.remove("hide");
 }
 
+// Event on replay button (winner pop-up)
 document.querySelector("#replay").addEventListener("click", () => {
   window.location.reload();
 });
 
-document.getElementById("dark").addEventListener("click", (e) => {
+// Light/dark mode
+dark.addEventListener("click", () => {
   day ? (day = false) : (day = true);
 
   document.querySelector("body").classList.toggle("dark");
   document.querySelector(".instructions").classList.toggle("dark");
   document.querySelector(".close").classList.toggle("dark");
 
-  day
-    ? (e.target.innerHTML = '<i class="fas fa-moon"></i>')
-    : (e.target.innerHTML = '<i class="fas fa-sun"></i>');
+  if (day) {
+    dark.innerHTML = '<i class="fas fa-moon"></i>';
+  } else {
+    dark.innerHTML = '<i class="fas fa-sun"></i>';
+  }
 });
 
+// Event for instructions pop-up
 document.querySelector("#help").addEventListener("click", () => {
   instructions.classList.toggle("hide");
 });
 
+// Event on pokeball to start the game
 document.getElementById("submit").addEventListener("click", () => {
   getPokemon(1);
 });

@@ -189,6 +189,11 @@ header button:hover {
   visibility: hidden;
 }
 
+/*To make stats unclickable*/
+.disable {
+  pointer-events: none;
+}
+
 .card-container {
   perspective: 600;
   position: relative;
