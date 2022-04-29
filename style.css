@@ -189,6 +189,11 @@ header button:hover {
   visibility: hidden;
 }
 
+/**/
+.disable {
+  pointer-events: none;
+}
+
 .card-container {
   perspective: 600;
   position: relative;

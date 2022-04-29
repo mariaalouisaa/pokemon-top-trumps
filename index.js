@@ -4,6 +4,8 @@ let score1 = 0;
 let score2 = 0;
 const messasge = document.querySelector(".message");
 const instructions = document.querySelector(".instructions");
+const stats = document.querySelectorAll(".stat");
+
 let day = true;
 
 function getPokemon(player) {
@@ -29,7 +31,6 @@ function pickTrump() {
   document.querySelector(".draw-header").classList.add("hidden");
   document.querySelector(".pick-header").classList.remove("hidden");
   setTimeout(() => {
-    let stats = document.querySelectorAll(".stat");
     stats.forEach((stat) => stat.addEventListener("click", playTrump));
   }, 100);
 }
@@ -37,6 +38,7 @@ function pickTrump() {
 function playTrump(e) {
   e.preventDefault();
   this.classList.add("selected");
+  stats.forEach((stat) => stat.classList.add("disable"));
   currentAttack = this.innerHTML;
   getPokemon(2);
 }
