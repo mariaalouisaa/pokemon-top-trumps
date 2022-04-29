@@ -5,10 +5,10 @@ let score2 = 0;
 const messasge = document.querySelector(".message");
 const instructions = document.querySelector(".instructions");
 const stats = document.querySelectorAll(".stat");
-
 const dark = document.querySelector("#dark");
 let day = true;
 
+// Initial API call
 function getPokemon(player) {
   let random = Math.floor(Math.random() * 21);
   fetch(`https://pokeapi.co/api/v2/pokemon/`)
@@ -28,6 +28,7 @@ function getPokemon(player) {
     .catch((error) => console.error(error));
 }
 
+// Make each Player 1 stat clickable
 function pickTrump() {
   document.querySelector(".draw-header").classList.add("hidden");
   document.querySelector(".pick-header").classList.remove("hidden");
@@ -39,6 +40,7 @@ function pickTrump() {
   }, 100);
 }
 
+// Send chosen trump to API
 function playTrump(e) {
   e.preventDefault();
   this.classList.add("selected");
@@ -47,6 +49,7 @@ function playTrump(e) {
   getPokemon(2);
 }
 
+// Get player 2's card
 function drawCard(pokemon, player) {
   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     .then((response) => {
@@ -126,6 +129,7 @@ function drawCard(pokemon, player) {
     .catch((error) => console.error(error));
 }
 
+// Next round begins...
 function resetCards() {
   let stats = document.querySelectorAll(".stat");
 
@@ -139,6 +143,7 @@ function resetCards() {
   }, 6000);
 }
 
+// Pop up message when a player reached 10 points
 function displayWinner() {
   if (score1 > score2) {
     document.querySelector("#who-wins").innerHTML = `You win!
@@ -146,7 +151,7 @@ function displayWinner() {
     Play again to Catch 'Em All.
     `;
   } else {
-    document.querySelector("#gif").src = "sad-poke.gif";
+    document.querySelector("#gif").src = "images/sad-poke.gif";
     document.querySelector("#who-wins").innerHTML = `Computer wins :(  
 
 Keep practicing and you'll be a Pokemon Master in no time!  
@@ -175,8 +180,13 @@ dark.addEventListener("click", () => {
   }
 });
 
-// Event for instructions pop-up
+// Event for instructions pop-up (? button)
 document.querySelector("#help").addEventListener("click", () => {
+  instructions.classList.toggle("hide");
+});
+
+// Event to close instructions (on the x)
+document.querySelector(".close").addEventListener("click", () => {
   instructions.classList.toggle("hide");
 });
 
