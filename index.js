@@ -175,8 +175,13 @@ dark.addEventListener("click", () => {
   }
 });
 
-// Event for instructions pop-up
+// Event for instructions pop-up (? button)
 document.querySelector("#help").addEventListener("click", () => {
+  instructions.classList.toggle("hide");
+});
+
+// Event to close instructions (on the x)
+document.querySelector(".close").addEventListener("click", () => {
   instructions.classList.toggle("hide");
 });
 
